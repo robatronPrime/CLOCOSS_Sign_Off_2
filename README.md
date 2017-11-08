@@ -18,4 +18,4 @@ sudo apt-get install nodejs npm
 npm install --save express
 
 ## Clone repository
-git clone 
+git clone https://github.com/robatronPrime/CLOCOSS_Sign_Off_2.git
