@@ -19,3 +19,6 @@ git clone https://github.com/robatronPrime/CLOCOSS_Sign_Off_2.git
 
 ## Install express into CLOCOSS Sign Off 2
 npm install --save express
+
+## To test run
+node app
