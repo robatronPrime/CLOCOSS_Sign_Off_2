@@ -1,0 +1,105 @@
+body {
+  color: black;
+  background-color: white;
+}
+
+select {
+  display: block;
+  margin: 1em 0;
+}
+
+input:invalid {
+  box-shadow: 0 0 4px 1px red;
+}
+
+.errormessage {
+  display: none;
+  padding: .2em .7em;
+  border-radius: .3em;
+  font-size: 75%;
+  color: #800;
+  background-color: #ddd;
+  line-height: 1rem;
+  margin-left: 1em;
+  position: absolute;
+  right: 0;
+  margin-top: .5em;
+}
+
+input:invalid + .errormessage {
+  display: block;
+}
+
+#filecontent {
+  width: 40em;
+  height: 10em;
+}
+
+#selectsection {
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  background-color: #ddd;
+  z-index: 1;
+  padding: 0 1rem 5rem 4rem;
+  border-radius: 0 1rem 1rem 0;
+  min-height: 10em;
+}
+
+#selectsection.off {
+  visibility: hidden;
+}
+
+#selectsection > .opener {
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 1em;
+  visibility: visible;
+  background-color: #ddd;
+  z-index: 1;
+  padding: 1rem;
+  border-radius: 0 1rem 1rem 0;
+  box-sizing: border-box;
+  width: 3em;
+  cursor: pointer;
+}
+
+#selectsection:not(.off) + #valuesection {
+  opacity: 0;
+}
+
+#selectsection > .opener:before {
+  display: inline;
+  font-size: 2em;
+  content: '<';
+}
+
+#selectsection.off > .opener:before {
+  content: '>';
+}
+
+#valuesection {
+  display: inline-block;
+  position: absolute;
+  left: 4em;
+  padding: 0 0 1.5em;
+  transition: opacity .5s;
+}
+
+#valuesection.notloaded h1.loaded,
+#valuesection:not(.notloaded) h1.notloaded {
+  display: none;
+}
+
+#save {
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+button.pending {
+  font-weight: bold;
+}
