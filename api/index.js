@@ -32,3 +32,13 @@ api.put('/:id(\\w+)', bodyParser.text(), async (req, res) => {
     res.sendStatus(500);
   }
 });
+
+api.post('/:id(\\w+)', bodyParser.text(), async (req, res) => {
+    try {
+        await db.post(req.params.id, req.body);
+        res.sendStatus(204);
+    } catch (e) {
+        console.error(e);
+        res.sendStatus(500);
+    }
+});
