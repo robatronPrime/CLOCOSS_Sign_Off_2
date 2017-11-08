@@ -29,3 +29,11 @@ module.exports.put = async (id, val) => {
   }
   await ds.save(entity);
 };
+
+module.exports.post = async (id, val) => {
+  const entity = {
+    key: key(id),
+    data: { name: id, val },
+  }
+  await ds.save(entity);
+};
