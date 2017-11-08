@@ -13,3 +13,6 @@ sudo apt-get -y install git
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash - 
 
 sudo apt-get install nodejs npm
+
+## install express
+npm install --save express
