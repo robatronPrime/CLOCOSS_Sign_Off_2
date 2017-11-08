@@ -125,3 +125,11 @@ async function save() {
 
   loadFilenames();
 }
+
+async function update() {
+    try {
+        const name = els.cfn.textContent;
+        els.update.classList.remove('pending');
+        els.update.
+    }
+}

@@ -16,3 +16,7 @@ module.exports.get = (id) => {
 module.exports.put = (id, val) => {
   data[id] = val;
 };
+
+module.exports.post = (id, val) => {
+  data[id] = val;  
+};
