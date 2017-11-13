@@ -32,6 +32,8 @@ module.exports.put = async (id, val) => {
 
 module.exports.post = async (id, val) => {
   const entity = {
+    const [data] =await ds.get(key(id));
+    if (data && data.val) val = parseInt(val) + +data.val;
     key: key(id),
     data: { name: id, val },
   }
