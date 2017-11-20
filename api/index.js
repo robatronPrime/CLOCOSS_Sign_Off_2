@@ -16,7 +16,7 @@ api.get('/', async (req, res) => {
 
 api.get('/:id(\\w+)', async (req, res) => {
   try {
-    res.sendStatus(await db.get(req.params.id));
+    res.send(await db.get(req.params.id));
   } catch (e) {
     console.error(e);
     res.sendStatus(500);
@@ -35,19 +35,18 @@ api.put('/:id(\\w+)', bodyParser.text(), async (req, res) => {
 
 api.post('/:id(\\w+)', bodyParser.text(), async (req, res) => {
     try {
-        res.sendStatus(await db.post(req.params.id, req.body));
+        res.send(await db.post(req.params.id, req.body));
     } catch (e) {
         console.error(e);
         res.sendStatus(500);
     }
 });
 
-api.delete('/', async (req, res) => {
+api.delete('/:id(\\w+)', async (req, res) => {
   try {
-    await db.delete(req.params.id);
-    res.sendStatus(204);
+    res.send(await db.delete(req.params.id));
   } catch (e) {
     console.error(e);
-    res.sendStatus(500);
-  }
+    res.sedStatus(500);
+ }
 });

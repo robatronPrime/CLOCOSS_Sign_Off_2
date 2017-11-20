@@ -20,3 +20,7 @@ module.exports.put = (id, val) => {
 module.exports.post = (id, val) => {
   data[id] = val;  
 };
+
+module.exports.delete = (id, val) => {
+  data[id] = val;  
+};
