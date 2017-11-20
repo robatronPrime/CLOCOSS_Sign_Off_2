@@ -18,21 +18,20 @@ module.exports.list = async () => {
 module.exports.get = async (id) => {
   // asynchronously get the entity
   const [data] = await ds.get(key(id));
-  if (data && data.val) return data.val;
-  return '';
+  if (data && data.val) return data.val.toString();
+  return '0';
 };
 
 module.exports.put = async (id, val) => {
-  // asynchronously put data to entry
   const entity = {
     key: key(id),
     data: { name: id, val },
   }
   await ds.save(entity);
+  return val;
 };
 
 module.exports.post = async (id, val) => {
-  // asynchronously post, add data to exisiting data in entry
   const [data] = await ds.get(key(id));
   if (data && data.val) val = +val + +data.val;
   const entity = {
@@ -40,10 +39,10 @@ module.exports.post = async (id, val) => {
     data: { name: id, val },
   }
   await ds.save(entity);
+  return val.toString();
 };
 
 module.exports.delete = async (id, val) => {
-  // asynchronously delete data and entity
   const [data] = await ds.delete(key(id));
   if (data && data.val) return data.val;
   return '';
