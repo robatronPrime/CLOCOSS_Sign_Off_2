@@ -22,3 +22,6 @@ npm install --save express
 
 ## To test run
 node app
+
+## To deploy, run 
+gcloud app deploy – this will take awhile.
