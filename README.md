@@ -21,7 +21,7 @@ git clone https://github.com/robatronPrime/CLOCOSS_Sign_Off_2.git
 npm install --save express
 
 ## To test run
-node app
+node app - to veiw the page type in the external IP address for the VM and :8080 at the end. Example: ##.###.##.##:8008
 
 ## To deploy, run 
 gcloud app deploy – this will take awhile.
