@@ -5,6 +5,7 @@ module.exports = api;
 
 const db = require(`./db-datastore`);
 
+//get database list 
 api.get('/', async (req, res) => {
   try {
     res.json(await db.list());
@@ -14,6 +15,7 @@ api.get('/', async (req, res) => {
   }
 });
 
+//get database data
 api.get('/:id(\\w+)', async (req, res) => {
   try {
     res.send(await db.get(req.params.id));
@@ -23,6 +25,7 @@ api.get('/:id(\\w+)', async (req, res) => {
   }
 });
 
+//put data into database
 api.put('/:id(\\w+)', bodyParser.text(), async (req, res) => {
   try {
     res.send(await db.put(req.params.id, req.body));
@@ -32,6 +35,7 @@ api.put('/:id(\\w+)', bodyParser.text(), async (req, res) => {
   }
 });
 
+//post data to database
 api.post('/:id(\\w+)', bodyParser.text(), async (req, res) => {
     try {
         res.send(await db.post(req.params.id, req.body));
@@ -41,6 +45,7 @@ api.post('/:id(\\w+)', bodyParser.text(), async (req, res) => {
     }
 });
 
+//delete data from database
 api.delete('/:id(\\w+)', async (req, res) => {
   try {
     await db.delete(req.params.id, req.body);
