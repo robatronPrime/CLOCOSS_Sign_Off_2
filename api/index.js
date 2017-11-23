@@ -49,6 +49,6 @@ api.delete('/:id(\\w+)', async (req, res) => {
     res.sendStatus(204);
   } catch (e) {
     console.error(e);
-    res.sedStatus(500);
+    res.sendStatus(500);
  }
 });
